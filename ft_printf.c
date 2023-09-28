@@ -12,21 +12,39 @@
 
 #include "printf.h"
 
-int	ft_printf(const char *format, ...)
+int	is_valid(char conversion_specifier)
 {
-	int i;
-	va_list lista;
-	int broj;
+	char	valid_set[10];
+	int		i;
 
-	va_start(lista, format);
-	broj = va_arg(lista, int);
-	broj =va_arg(lista, int);
 	i = 0;
-	while(format[i] != '\0')
+	ft_strlcpy(valid_set, "cspdiuxX%", ft_strlen("cspdiuxX%") + 1);
+	while (valid_set[i] != '\0')
 	{
-		write(1, &format[i], sizeof(char));
+		if (conversion_specifier == valid_set[i])
+			return (1);
 		i++;
 	}
-	ft_putnbr_fd(broj, 1);
-	return (i);
+	return (0);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	int	i;
+
+	i = 0;
+	while (format[i] != '\0')
+	{
+		if (format[i] != '%')
+			ft_putchar_fd(format[i], 1);
+		else
+		{
+			i++;
+			if (!is_valid(format[i]))
+				return (-1);
+			//dohvati sljedeci argument i pozovi funkciju
+		}
+		i++;
+	}
+	return (1);
 }
