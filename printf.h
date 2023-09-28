@@ -24,6 +24,8 @@ void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 void	printc(va_list lista);
+void	printdi(va_list lista);
+void	printp(va_list lista);
 void	prints(va_list lista);
 
 #endif
