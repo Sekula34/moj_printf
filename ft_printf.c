@@ -34,12 +34,12 @@ static void	main_menu(char conversion_specifier, va_list a)
 		printc(a);
 	else if (conversion_specifier == 's')
 		prints(a);
-	else if (conversion_specifier == 'p')
-		printp(a);
+	// else if (conversion_specifier == 'p')
+	// 	printp(a);
 	else if (conversion_specifier == 'd' || conversion_specifier == 'i')
 		printdi(a);
-	// else if (conversion_specifier == 'u')
-	// 	//u function
+	else if (conversion_specifier == 'u')
+		printu(a);
 	// else if (conversion_specifier == 'x')
 	// 	//x function
 	// else if (conversion_specifier == 'X')

@@ -27,6 +27,8 @@ void	printc(va_list lista);
 void	printdi(va_list lista);
 void	printp(va_list lista);
 void	prints(va_list lista);
+void	printu(va_list lista);
+void	putunbr_fd(unsigned n, int fd);
 
 #endif
 
