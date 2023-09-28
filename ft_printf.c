@@ -44,8 +44,8 @@ static void	main_menu(char conversion_specifier, va_list a)
 	// 	//x function
 	// else if (conversion_specifier == 'X')
 	// 	//X function
-	// else if (conversion_specifier == '%')
-	// 	//% function
+	else if (conversion_specifier == '%')
+		ft_putchar_fd('%', 1);
 }
 
 int	ft_printf(const char *format, ...)
