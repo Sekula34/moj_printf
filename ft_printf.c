@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-int	is_valid(char conversion_specifier)
+static int	is_valid(char conversion_specifier)
 {
 	char	valid_set[10];
 	int		i;
@@ -28,10 +28,34 @@ int	is_valid(char conversion_specifier)
 	return (0);
 }
 
+static void	main_menu(char conversion_specifier, va_list a)
+{
+	if (conversion_specifier == 'c')
+		printc(a);
+	// else if (conversion_specifier == 's')
+	// 	//s function
+	// else if (conversion_specifier == 'p')
+	// 	// p function
+	// else if (conversion_specifier == 'd')
+	// 	//d function
+	// else if (conversion_specifier == 'i')
+	// 	//i function
+	// else if (conversion_specifier == 'u')
+	// 	//u function
+	// else if (conversion_specifier == 'x')
+	// 	//x function
+	// else if (conversion_specifier == 'X')
+	// 	//X function
+	// else if (conversion_specifier == '%')
+	// 	//% function
+}
+
 int	ft_printf(const char *format, ...)
 {
-	int	i;
+	int		i;
+	va_list	lista;
 
+	va_start(lista, format);
 	i = 0;
 	while (format[i] != '\0')
 	{
@@ -43,8 +67,10 @@ int	ft_printf(const char *format, ...)
 			if (!is_valid(format[i]))
 				return (-1);
 			//dohvati sljedeci argument i pozovi funkciju
+			main_menu(format[i], lista);
 		}
 		i++;
 	}
+	va_end(lista);
 	return (1);
 }
