@@ -32,8 +32,8 @@ static void	main_menu(char conversion_specifier, va_list a)
 {
 	if (conversion_specifier == 'c')
 		printc(a);
-	// else if (conversion_specifier == 's')
-	// 	//s function
+	else if (conversion_specifier == 's')
+		prints(a);
 	// else if (conversion_specifier == 'p')
 	// 	// p function
 	// else if (conversion_specifier == 'd')
