@@ -39,13 +39,16 @@ static void	main_menu(char conversion_specifier, va_list a, long *printed_chars)
 	else if (conversion_specifier == 'd' || conversion_specifier == 'i')
 		*printed_chars = *printed_chars + printdi(a);
 	else if (conversion_specifier == 'u')
-		printu(a);
+		*printed_chars = *printed_chars + printu(a);
 	else if (conversion_specifier == 'x')
-		printx(a, 0);
+		*printed_chars = *printed_chars + printx(a, 0);
 	else if (conversion_specifier == 'X')
-		printx(a, 1);
+		*printed_chars = *printed_chars + printx(a, 1);
 	else if (conversion_specifier == '%')
+	{
 		ft_putchar_fd('%', 1);
+		*printed_chars = *printed_chars + 1;
+	}
 }
 
 void	looping(const char *format, long *printed_chars, va_list lista)

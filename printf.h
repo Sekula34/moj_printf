@@ -29,8 +29,8 @@ int		printc(va_list lista);
 int		printdi(va_list lista);
 int		printp(va_list lista);
 long	prints(va_list lista);
-void	printu(va_list lista);
-void	printx(va_list lista, int option);
+int		printu(va_list lista);
+int		printx(va_list lista, int option);
 void	putunbr_fd(unsigned int n, int fd);
 
 #endif
