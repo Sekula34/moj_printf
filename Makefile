@@ -4,8 +4,22 @@ COMPILER = cc
 
 COMPILER_FLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_putnbr_fd.c ft_bzero.c ft_putstr_fd.c ft_putchar_fd.c ft_strlcpy.c ft_strlen.c \
-printc.c prints.c printp.c printdi.c printu.c putunbr.c
+SRCS = ft_bzero.c \
+ft_calloc.c \
+ft_printf.c \
+ft_putchar_fd.c \
+ft_putnbr_fd.c \
+ft_putstr_fd.c \
+ft_strlcpy.c \
+ft_strlen.c \
+ft_toupper.c \
+printc.c \
+printdi.c \
+printp.c \
+prints.c \
+printu.c \
+printx.c \
+putunbr.c 
 
 OBJS := $(SRCS:%.c=%.o)
 

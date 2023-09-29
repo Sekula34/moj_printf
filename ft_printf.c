@@ -40,10 +40,10 @@ static void	main_menu(char conversion_specifier, va_list a)
 		printdi(a);
 	else if (conversion_specifier == 'u')
 		printu(a);
-	// else if (conversion_specifier == 'x')
-	// 	//x function
-	// else if (conversion_specifier == 'X')
-	// 	//X function
+	else if (conversion_specifier == 'x')
+		printx(a, 0);
+	else if (conversion_specifier == 'X')
+		printx(a, 1);
 	else if (conversion_specifier == '%')
 		ft_putchar_fd('%', 1);
 }
