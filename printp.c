@@ -10,18 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "printf.h"
+#include "printf.h"
 
-// void	hexadecimal(unsigned long long)
-// {
+char *hexa_string1(unsigned long number, int option)
+{
+	char *string;
+	const char *digits = "0123456789abcdef";
+	long long	i;
 
-// }
+	i = 0;
+	string = ft_calloc(21, sizeof(char));
+	if(string == NULL)
+		return (NULL);
+	if (number == 0)
+	{
+		string[0] = '0';
+		return (string); 
+	}
+	while (number > 0)
+	{
+		string[i] = digits[number % 16];
+		if(option == 1)
+			string[i] = ft_toupper(string[i]);
+		i++;
+		number = number / 16; 
+	}
+	return (string);
+}
 
-// void	printp(va_list lista)
-// {
-// 	unsigned long long p;
+void	printp(va_list lista)
+{
+	unsigned long long p;
 
-// 	p = (unsigned long long) va_arg(lista, void*);
-// 	ft_putstr_fd("0x", 1);
+	p = (unsigned long long) va_arg(lista, void*);
+	char	*to_print;
+	int	i;
 
-// }
+	to_print = hexa_string1(p, 0);
+	if(to_print == NULL)
+		return ;
+	i = ft_strlen(to_print);
+	ft_putstr_fd("0x", 1);
+	while(i >= 0)
+	{
+		ft_putchar_fd(to_print[i], 1);
+		i--;
+	}
+	free(to_print);
+}
