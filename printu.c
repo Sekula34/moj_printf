@@ -14,9 +14,8 @@
 
 void	printu(va_list lista)
 {
-	unsigned int number; 
+	unsigned int	number;
 
 	number = va_arg(lista, unsigned int);
 	putunbr_fd(number, 1);
 }
-

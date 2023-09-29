@@ -64,7 +64,6 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (!is_valid(format[i]))
 				return (-1);
-			//dohvati sljedeci argument i pozovi funkciju
 			main_menu(format[i], lista);
 		}
 		i++;

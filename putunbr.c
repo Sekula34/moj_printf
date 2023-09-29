@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "printf.h"
 
-static int	get_nod(unsigned n)
+static int	get_nod(unsigned int n)
 {
 	long	n1;
 	int		digits;
@@ -28,7 +27,7 @@ static int	get_nod(unsigned n)
 	return (digits);
 }
 
-void	putunbr_fd(unsigned n, int fd)
+void	putunbr_fd(unsigned int n, int fd)
 {
 	char	arr[11];
 	long	n1;

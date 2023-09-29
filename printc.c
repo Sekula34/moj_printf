@@ -14,7 +14,7 @@
 
 void	printc(va_list lista)
 {
-	char c; 
+	char	c;
 
 	c = (char) va_arg(lista, int);
 	ft_putchar_fd(c, 1);

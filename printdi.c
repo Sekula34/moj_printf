@@ -14,7 +14,7 @@
 
 void	printdi(va_list lista)
 {
-	int number; 
+	int	number;
 
 	number = va_arg(lista, int);
 	ft_putnbr_fd(number, 1);
