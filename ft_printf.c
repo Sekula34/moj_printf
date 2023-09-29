@@ -28,16 +28,16 @@ static int	is_valid(char conversion_specifier)
 	return (0);
 }
 
-static void	main_menu(char conversion_specifier, va_list a)
+static void	main_menu(char conversion_specifier, va_list a, long *printed_chars)
 {
 	if (conversion_specifier == 'c')
-		printc(a);
+		*printed_chars = *printed_chars + printc(a);
 	else if (conversion_specifier == 's')
-		prints(a);
+		*printed_chars = *printed_chars + prints(a);
 	else if (conversion_specifier == 'p')
-		printp(a);
+		*printed_chars = *printed_chars + printp(a);
 	else if (conversion_specifier == 'd' || conversion_specifier == 'i')
-		printdi(a);
+		*printed_chars = *printed_chars + printdi(a);
 	else if (conversion_specifier == 'u')
 		printu(a);
 	else if (conversion_specifier == 'x')
@@ -48,26 +48,39 @@ static void	main_menu(char conversion_specifier, va_list a)
 		ft_putchar_fd('%', 1);
 }
 
-int	ft_printf(const char *format, ...)
+void	looping(const char *format, long *printed_chars, va_list lista)
 {
-	int		i;
-	va_list	lista;
+	int i; 
 
-	va_start(lista, format);
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
+		{
 			ft_putchar_fd(format[i], 1);
+			(*printed_chars)++;
+		}
 		else
 		{
 			i++;
 			if (!is_valid(format[i]))
-				return (-1);
-			main_menu(format[i], lista);
+			{
+				*printed_chars = -1;
+				return ;
+			}
+			main_menu(format[i], lista, printed_chars);
 		}
 		i++;
 	}
+}
+int	ft_printf(const char *format, ...)
+{
+	va_list	lista;
+	long	printed_chars;
+
+	va_start(lista, format);
+	printed_chars = 0;
+	looping(format, &printed_chars, lista);
 	va_end(lista);
-	return (1);
+	return (printed_chars);
 }

@@ -12,10 +12,13 @@
 
 #include "printf.h"
 
-void	prints(va_list lista)
+long	prints(va_list lista)
 {
 	char	*string;
+	long	string_length;
 
 	string = va_arg(lista, char *);
 	ft_putstr_fd(string, 1);
+	string_length = ft_strlen(string);
+	return (string_length);
 }

@@ -38,22 +38,25 @@ char	*hexa_string1(unsigned long number, int option)
 	return (string);
 }
 
-void	printp(va_list lista)
+int	printp(va_list lista)
 {
 	unsigned long long	p;
 	char				*to_print;
 	int					i;
+	int					value_to_return;
 
 	p = (unsigned long long) va_arg(lista, void *);
 	to_print = hexa_string1(p, 0);
 	if (to_print == NULL)
-		return ;
+		return 0;
 	i = ft_strlen(to_print);
 	ft_putstr_fd("0x", 1);
+	value_to_return = i + 2;
 	while (i >= 0)
 	{
 		ft_putchar_fd(to_print[i], 1);
 		i--;
 	}
 	free (to_print);
+	return (value_to_return);
 }

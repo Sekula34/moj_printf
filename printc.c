@@ -12,10 +12,11 @@
 
 #include "printf.h"
 
-void	printc(va_list lista)
+int	printc(va_list lista)
 {
 	char	c;
 
 	c = (char) va_arg(lista, int);
 	ft_putchar_fd(c, 1);
+	return (1);
 }

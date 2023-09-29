@@ -34,7 +34,7 @@ program : main.c $(OBJS)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 clean:
