@@ -40,15 +40,13 @@ char	*hexa_string1(unsigned long number, int option)
 
 int	printp(va_list lista)
 {
-	unsigned long long	*p;
+	unsigned long long	p;
 	char				*to_print;
 	int					i;
 	int					value_to_return;
 
-	p = (unsigned long long *) va_arg(lista, void *);
-	if (p == NULL)
-		return (-1);
-	to_print = hexa_string1(*p, 0);
+	p = (unsigned long long) va_arg(lista, void *);
+	to_print = hexa_string1(p, 0);
 	if (to_print == NULL)
 		return (-1);
 	i = ft_strlen(to_print) - 1;
