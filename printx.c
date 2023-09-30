@@ -49,8 +49,8 @@ int	printx(va_list lista, int option)
 	to_print = hexa_string(number, option);
 	if (to_print == NULL)
 		return (0);
-	i = ft_strlen(to_print);
-	value_to_return = i;
+	i = ft_strlen(to_print) - 1;
+	value_to_return = i + 1;
 	while (i >= 0)
 	{
 		ft_putchar_fd(to_print[i], 1);
