@@ -49,9 +49,9 @@ int	printp(va_list lista)
 	to_print = hexa_string1(p, 0);
 	if (to_print == NULL)
 		return (0);
-	i = ft_strlen(to_print);
+	i = ft_strlen(to_print) - 1;
 	ft_putstr_fd("0x", 1);
-	value_to_return = i + 2;
+	value_to_return = i + 3;
 	while (i >= 0)
 	{
 		ft_putchar_fd(to_print[i], 1);
