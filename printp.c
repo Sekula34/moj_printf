@@ -48,7 +48,7 @@ int	printp(va_list lista)
 	p = (unsigned long long) va_arg(lista, void *);
 	to_print = hexa_string1(p, 0);
 	if (to_print == NULL)
-		return (0);
+		return (-1);
 	i = ft_strlen(to_print) - 1;
 	ft_putstr_fd("0x", 1);
 	value_to_return = i + 3;
