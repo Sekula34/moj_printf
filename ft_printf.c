@@ -14,11 +14,10 @@
 
 static int	is_valid(char conversion_specifier)
 {
-	char	valid_set[10];
+	const char	valid_set[] = "cspdiuxX%";
 	int		i;
 
 	i = 0;
-	ft_strlcpy(valid_set, "cspdiuxX%", ft_strlen("cspdiuxX%") + 1);
 	while (valid_set[i] != '\0')
 	{
 		if (conversion_specifier == valid_set[i])
