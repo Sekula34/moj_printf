@@ -25,10 +25,6 @@ OBJS := $(SRCS:%.c=%.o)
 
 %.o: %.c ft_printf.h
 	$(COMPILER) $(COMPILER_FLAGS) -c $< -o $@ 
-
-#delete next line 
-program : main.c $(OBJS)
-	cc -Wall -Wextra -Werror -o program main.c $(OBJS)
 	
 .PHONY: clean fclean re all 
 
