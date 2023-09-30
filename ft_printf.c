@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	is_valid(char conversion_specifier)
 {
@@ -53,7 +53,7 @@ static void	main_menu(char conversion_specifier, va_list a, long *printed_chars)
 
 void	looping(const char *format, long *printed_chars, va_list lista)
 {
-	int i; 
+	int	i;
 
 	i = 0;
 	while (format[i] != '\0')
@@ -76,6 +76,7 @@ void	looping(const char *format, long *printed_chars, va_list lista)
 		i++;
 	}
 }
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	lista;
