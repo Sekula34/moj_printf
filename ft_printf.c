@@ -81,6 +81,8 @@ int	ft_printf(const char *format, ...)
 	va_list	lista;
 	long	printed_chars;
 
+	if (format == NULL)
+		return (-1);
 	va_start(lista, format);
 	printed_chars = 0;
 	looping(format, &printed_chars, lista);
