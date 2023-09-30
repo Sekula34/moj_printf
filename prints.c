@@ -21,7 +21,7 @@ long	prints(va_list lista)
 	if (string == NULL)
 	{
 		ft_putstr_fd("(null)", 1);
-		return (-1);
+		return (6);
 	}
 	ft_putstr_fd(string, 1);
 	string_length = ft_strlen(string);
