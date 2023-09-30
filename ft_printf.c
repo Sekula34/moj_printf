@@ -15,7 +15,7 @@
 static int	is_valid(char conversion_specifier)
 {
 	const char	valid_set[] = "cspdiuxX%";
-	int		i;
+	int			i;
 
 	i = 0;
 	while (valid_set[i] != '\0')
