@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 char	*hexa_string(unsigned long number, int option)
 {
@@ -48,7 +48,7 @@ int	printx(va_list lista, int option)
 	number = va_arg(lista, unsigned int);
 	to_print = hexa_string(number, option);
 	if (to_print == NULL)
-		return 0;
+		return (0);
 	i = ft_strlen(to_print);
 	ft_putstr_fd("0x", 1);
 	value_to_return = i + 2;

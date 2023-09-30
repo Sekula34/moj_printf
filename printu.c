@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	get_nod(unsigned int n)
 {
@@ -28,6 +28,7 @@ static int	get_nod(unsigned int n)
 	}
 	return (digits);
 }
+
 int	printu(va_list lista)
 {
 	unsigned int	number;

@@ -23,7 +23,7 @@ putunbr.c
 
 OBJS := $(SRCS:%.c=%.o)
 
-%.o: %.c printf.h
+%.o: %.c ft_printf.h
 	$(COMPILER) $(COMPILER_FLAGS) -c $< -o $@ 
 
 #delete next line 

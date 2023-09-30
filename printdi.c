@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	get_nod(int n)
 {
@@ -28,6 +28,7 @@ static int	get_nod(int n)
 	}
 	return (digits);
 }
+
 int	printdi(va_list lista)
 {
 	int	number;
@@ -36,7 +37,7 @@ int	printdi(va_list lista)
 	number = va_arg(lista, int);
 	ft_putnbr_fd(number, 1);
 	value_to_return = get_nod(number);
-	if(number < 0)
+	if (number < 0)
 		return (value_to_return + 1);
 	return (value_to_return);
 }
