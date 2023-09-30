@@ -18,7 +18,7 @@ long	prints(va_list lista)
 	long	string_length;
 
 	string = va_arg(lista, char *);
-	if(string == NULL)
+	if (string == NULL)
 		return (0);
 	ft_putstr_fd(string, 1);
 	string_length = ft_strlen(string);
